@@ -58,6 +58,10 @@ export class BackupCommand extends BaseCommand {
 
       await Promise.parallel(config.matches, async (match) => {
         const files = await backend.ls(match);
+        if (files.length === 0) {
+          return;
+        }
+
         const root = Buffer.from(match.root).toString("base64");
 
         await Promise.sequence(files, async (file) => {
