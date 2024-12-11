@@ -1,0 +1,11 @@
+# NodeJS
+node_modules/
+build/
+
+# Miscs
+tmp/
+**/.DS_Store
+
+# Test
+.sops.yaml
+config.yml

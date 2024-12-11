@@ -1,0 +1,21 @@
+config:
+  encrypted: false
+  matches:
+    - root: ~/.config/nvim/
+      patterns:
+        - ~/.config/nvim/**/*
+
+secret:
+  encrypted: true
+  matches:
+    - root: ~/.ssh/
+      patterns:
+        - "~/.ssh/*"
+        - "!~/.ssh/known_hosts*"
+    - root: ~/.aws/
+      patterns:
+        - ~/.aws/**/*
+        - "!~/.aws/**/cache/*"
+    - root: ~/.kube/
+      patterns:
+        - ~/.kube/config
